@@ -35,6 +35,7 @@ def historical_weather_measures(historical: bool = False, lat: float = 57.048, l
     df["date"] = df['time'].str[:10]
     df['datetime'] = pd.to_datetime(df['time'])
     df['hour'] = pd.to_datetime(df['datetime']).dt.hour
+    df['date'] = pd.to_datetime(df['date'])
 
     # Filter the DataFrame based on whether historical data is requested or not
     today = (date.today()).strftime("%Y-%m-%d")

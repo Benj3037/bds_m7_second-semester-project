@@ -34,6 +34,7 @@ def electricity_prices(historical: bool = False, area: list = None, start: str =
     df["date"] = df["HourDK"].map(lambda x: datetime.strptime(x, '%Y-%m-%dT%H:%M:%S').strftime("%Y-%m-%d"))
     df['datetime'] = pd.to_datetime(df['HourDK'])
     df['hour'] = pd.to_datetime(df['datetime']).dt.hour
+    df['date'] = pd.to_datetime(df['date'])
 
     # Divide the price to KWH
     df['SpotPriceDKK_KWH'] = df['SpotPriceDKK'] / 1000

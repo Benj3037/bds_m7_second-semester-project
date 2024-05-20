@@ -26,6 +26,7 @@ def calendar_denmark(start: str = (pd.Timestamp.now().year - 2), end: str = (pd.
     calendar_df = pd.DataFrame({'date': date_range})
 
     # Add features to the calendar dataframe
+    calendar_df['date'] = pd.to_datetime(calendar_df['date'])
     calendar_df['dayofweek'] = calendar_df['date'].dt.dayofweek
     calendar_df['day'] = calendar_df['date'].dt.day
     calendar_df['month'] = calendar_df['date'].dt.month
