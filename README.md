@@ -43,7 +43,7 @@ The data used comes from the following sources:
 - Weather Forecast based on Aalborg Denmark also from [Open Meteo](https://www.open-meteo.com).
 - Danish calendar that categorizes dates into types based on whether it is a workday or not. The Calendar is imported from the Python Danish holiday library.
 
-See corresponding functions in the folder [features](https://github.com/Camillahannesbo/MLOPs-Assignment-/tree/main/features). The functions include the initial API call and the following data preprocessing.
+See corresponding functions in the folder [features](https://github.com/tobiasmj97/bds_m7_second-semester-project/tree/main/features). The functions include the initial API call and the following data preprocessing.
 
 ## Model Performance Comparison:
 We initialize XGBoost Regressor and Long-Short-Term Memory as the models used for training, separated into separate pipelines. 
@@ -78,4 +78,4 @@ The models are fitted to the train data and further evaluated on test sets using
 ## Frontend Application on 🤗 Hugging Face Spaces:
 We have made a functional frontend application that visually demonstrates the project’s application in real-world scenarios. The Streamlit application is located in the following [Github Repository](https://github.com/tobiasmj97/bds_m7_second-semester-project_streamlit).
 
-Streamlit app is hosted on [Huggingface](https://huggingface.co/spaces/Camillahannesbo/Electricity_price).
+Streamlit app is hosted on [Huggingface](https://huggingface.co/spaces/Camillahannesbo/Electricity_price). **Skal ændres**
