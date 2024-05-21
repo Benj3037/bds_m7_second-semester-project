@@ -78,4 +78,4 @@ The models are fitted to the train data and further evaluated on test sets using
 ## Frontend Application on 🤗 Hugging Face Spaces:
 We have made a functional frontend application that visually demonstrates the project’s application in real-world scenarios. The Streamlit application is located in the following [Github Repository](https://github.com/tobiasmj97/bds_m7_second-semester-project_streamlit).
 
-Streamlit app is hosted on [Huggingface](https://huggingface.co/spaces/Camillahannesbo/Electricity_price). **Skal ændres**
+Streamlit app is hosted on [Huggingface](https://huggingface.co/spaces/Camillahannesbo/Electricity_price). **link skal ændres**
