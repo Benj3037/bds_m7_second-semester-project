@@ -31,7 +31,7 @@ Inspiration for code snippets has been taken from the following advanced tutoria
 [Hopsworks](https://www.hopsworks.ai) is used as the platform to store features in the **Hopworks Feature Store** and save the trained models in **Hopworks Model Registry**. Daily instance generation is done through Github Actions. Feature pipeline and inference are scheduled to run at 01:55 UTC everyday and then scheduled to sync to Huggingface Spaces at 02:01 UTC everyday.
 
 ## Data Pipeline:
-The overall architecture of the Electricity Pipeline is illustrated below. Inspiration is taken from [Lecture 1 - serverless ml course feature pipelines](https://drive.google.com/file/d/1L8DHGC5xo0NlNe8xfh4xf4NZV1CEGBA6/view) 
+The overall architecture of the Electricity Pipeline is illustrated below. Inspiration is taken from [Lecture 1 - serverless ml course feature pipelines](https://drive.google.com/file/d/1L8DHGC5xo0NlNe8xfh4xf4NZV1CEGBA6/view). 
 
 ![electricity_pipeline.png](images/electricity_pipeline.png)
 
@@ -76,6 +76,6 @@ The models are fitted to the train data and further evaluated on test sets using
 | ...            | ...              |
 
 ## Frontend Application on 🤗 Hugging Face Spaces:
-We have made a functional frontend application that visually demonstrates the project’s application in real-world scenarios. The Streamlit application is located in the following [Github Repository](https://github.com/tobiasmj97/bds_m7_second-semester-project_streamlit)
+We have made a functional frontend application that visually demonstrates the project’s application in real-world scenarios. The Streamlit application is located in the following [Github Repository](https://github.com/tobiasmj97/bds_m7_second-semester-project_streamlit).
 
-Streamlit app is hosted on [Huggingface](https://huggingface.co/spaces/Camillahannesbo/Electricity_price)
+Streamlit app is hosted on [Huggingface](https://huggingface.co/spaces/Camillahannesbo/Electricity_price).
