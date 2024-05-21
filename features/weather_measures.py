@@ -82,6 +82,7 @@ def forecast_weather_measures(lat: float = 57.048, lon: float = 9.9187, forecast
 
     # Extract date from the 'time' column and convert it to datetime format
     df["date"] = df['time'].str[:10]
+    df['date'] = pd.to_datetime(df['date'])
     df['datetime'] = pd.to_datetime(df['time'])
     df['hour'] = pd.to_datetime(df['datetime']).dt.hour
 
