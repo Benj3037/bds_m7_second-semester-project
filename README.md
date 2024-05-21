@@ -1,5 +1,5 @@
 # <span style="font-width:bold; font-size: 3rem; color:#2656a3;">**Msc. BDS - M7 Second Semester Project** 
-</span> <span style="font-width:bold; font-size: 3rem; color:#333;">EXAM ASSIGMENT - Repository for semester project</span>
+</span> <span style="font-width:bold; font-size: 3rem; color:#333;">EXAM ASSIGNMENT - Repository for semester project</span>
 
 ## Expectations and Format for the Semester Project:
 The semester project represents the first significant milestone in applying the knowledge and skills acquired from the curriculum. It's designed to bridge the gap between theoretical understanding and real-world application.
