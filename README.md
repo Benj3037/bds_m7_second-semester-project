@@ -29,7 +29,7 @@ There are six notebooks in the folder "*pipeline*":
 The structure of the notebooks is largely inspired by [Hopsworks tutorials](https://github.com/logicalclocks/hopsworks-tutorials).
 Inspiration for code snippets has been taken from the following advanced tutorials [air_quality](https://github.com/logicalclocks/hopsworks-tutorials/tree/master/advanced_tutorials/air_quality), [electricity](https://github.com/logicalclocks/hopsworks-tutorials/tree/master/advanced_tutorials/electricity), and [timeseries](https://github.com/logicalclocks/hopsworks-tutorials/tree/master/advanced_tutorials/timeseries).
 
-[Hopsworks](https://www.hopsworks.ai) is used as the platform to store features in the **Hopworks Feature Store** and save the trained models in **Hopworks Model Registry**. Daily instance generation is done through Github Actions. Feature pipeline and inference are scheduled to run at 01:55 UTC everyday and then scheduled to sync to Huggingface Spaces at 02:01 UTC everyday.
+[Hopsworks](https://www.hopsworks.ai) is used as the platform to store features in the **Hopworks Feature Store** and save the trained models in **Hopworks Model Registry**. Daily instance generation is done through GitHub Actions. Feature pipeline and inference are scheduled to run at 01:55 UTC everyday and then scheduled to sync to Huggingface Spaces at 02:01 UTC everyday.
 
 ## Data Pipeline:
 The overall architecture of the Electricity Pipeline is illustrated below. Inspiration is taken from [Lecture 1 - serverless ml course feature pipelines](https://drive.google.com/file/d/1L8DHGC5xo0NlNe8xfh4xf4NZV1CEGBA6/view). 
@@ -48,20 +48,22 @@ See corresponding functions in the folder [features](https://github.com/tobiasmj
 
 ## Model Performance Comparison:
 We initialize XGBoost Regressor and Long-Short-Term Memory as the models used for training, separated into separate pipelines. 
-The models are fitted to the train data and further evaluated on test sets using validation metric functions from the sklearn library. Actual and predicted prices are displayed for translating the models' performances from technical to non-technical audiences. 
+The models are fitted to the train data and further evaluated on test sets using validation metric functions from the sklearn library. Actual and predicted prices of the last 5 predictions are displayed for translating the models' performances from technical to non-technical audiences. 
 
 ### XGB Regressor 
 | Validation metrics   | Value    |  
 |----------------------|----------|
-| MSE                  | 0.059    |
-| R^2                  | 0.933    |
-| MAE                  | 0.166    |
+| MSE                  | 0.070    |
+| MAE                  | 0.211    |
+| RMSE                 | 0.265    |
 
-| Actual Prices  | Predicted Prices |  
-|----------------|------------------|
-| ...            | ...              |
-| ...            | ...              |
-| ...            | ...              |
+| Predicted Prices | Actual Prices |  
+|------------------|---------------|
+| 1: 0.4164        | 1: 0.4783     |
+| 2: 0.3227        | 2: 0.3917     |
+| 3: 0.4446        | 3: 0.3381     |
+| 4: 0.5635        | 4: 0.4252     |
+| 5: 0.6519        | 5: 0.5328     |
 
 ### LSTM
 | Validation metrics   | Value    |  
