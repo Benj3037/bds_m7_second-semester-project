@@ -23,7 +23,8 @@ There are five notebooks in the folder "*pipeline*":
 2. **Feature Pipeline**: New data are parsed and inserted into the feature groups.
 3. **Training Pipeline XGBRegressor**: Building feature view, feature engineering for time-series data, training dataset split, training the model, and saving it in the Model Registry.
 4. **Training Pipeline LSTM**: Building feature view, model architecture, and training dataset split, training the model, and saving it in the Model Registry.
-5. **Inference Pipeline**: One of the trained models is selected for final predictions. The trained model is retrieved from the model registry and used for inference and electricity price predictions on weather forecast measures.
+5. **Inference Pipeline XGBRegressor**: One of the trained models is selected for final predictions. The trained model is retrieved from the model registry and used for inference and electricity price predictions on weather forecast measures.
+6. **Inference Pipeline LSTM**: The trained model is retrieved from the model registry and used for inference and electricity price predictions on weather forecast measures.
 
 The structure of the notebooks is largely inspired by [Hopsworks tutorials](https://github.com/logicalclocks/hopsworks-tutorials).
 Inspiration for code snippets has been taken from the following advanced tutorials [air_quality](https://github.com/logicalclocks/hopsworks-tutorials/tree/master/advanced_tutorials/air_quality), [electricity](https://github.com/logicalclocks/hopsworks-tutorials/tree/master/advanced_tutorials/electricity), and [timeseries](https://github.com/logicalclocks/hopsworks-tutorials/tree/master/advanced_tutorials/timeseries).
