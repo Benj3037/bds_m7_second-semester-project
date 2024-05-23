@@ -17,13 +17,13 @@ This repository contains all notebooks and local data files for the final second
 This project aims to build a prediction system that forecasts the electricity prices in Denmark (area DK1) based on weather conditions, previous prices, and the Danish calendar.
 
 ## Structure:
-There are five notebooks in the folder "*pipeline*":
+There are six notebooks in the folder "*pipeline*":
 
-1. **Feature Backfill**: Historical data is loaded and we engineer and create feature groups in Hopswork. Exploratory Data Analysis is performed aimed at understanding the characteristics and underlying patterns within the data.
+1. **Feature Backfill**: Historical data is loaded and we engineer and create feature groups in Hopswork. Exploratory Data Analysis is performed aimed at understanding the characteristics and underlying patterns within the data. Moving Window is applied as a feature engineering technique trying to smooth out short-term fluctuations and highlight longer-term trends or cycles in the time-series data.
 2. **Feature Pipeline**: New data are parsed and inserted into the feature groups.
-3. **Training Pipeline XGBRegressor**: Building feature view, feature engineering for time-series data, training dataset split, training the model, and saving it in the Model Registry.
+3. **Training Pipeline XGBRegressor**: Building feature view, training dataset split, training the model and evaluating, and saving it in the Model Registry.
 4. **Training Pipeline LSTM**: Building feature view, model architecture, and training dataset split, training the model, and saving it in the Model Registry.
-5. **Inference Pipeline XGBRegressor**: One of the trained models is selected for final predictions. The trained model is retrieved from the model registry and used for inference and electricity price predictions on weather forecast measures.
+5. **Inference Pipeline XGBRegressor**: Loading new forecasted weather measures for final predictions. The trained model is retrieved from the model registry and used for inference and electricity price predictions on the new data.
 6. **Inference Pipeline LSTM**: The trained model is retrieved from the model registry and used for inference and electricity price predictions on weather forecast measures.
 
 The structure of the notebooks is largely inspired by [Hopsworks tutorials](https://github.com/logicalclocks/hopsworks-tutorials).
@@ -42,7 +42,7 @@ The data used comes from the following sources:
 - Hourly electricity prices in Denmark per day from [Energinet/Energidataservice](https://www.energidataservice.dk).
 - Different meteorological observations based on Aalborg Denmark from [Open Meteo](https://www.open-meteo.com).
 - Weather Forecast based on Aalborg Denmark also from [Open Meteo](https://www.open-meteo.com).
-- Danish calendar that categorizes dates into types based on whether it is a workday or not. The Calendar is imported from the Python Danish holiday library.
+- Danish calendar that categorizes dates into types based on whether it is a workday or not. The Calendar is imported from the Python Danish holidays library.
 
 See corresponding functions in the folder [features](https://github.com/tobiasmj97/bds_m7_second-semester-project/tree/main/features). The functions include the initial API call and the following data preprocessing.
 
