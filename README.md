@@ -48,7 +48,7 @@ See corresponding functions in the folder [features](https://github.com/tobiasmj
 
 ## Model Performance Comparison:
 We initialize XGBoost Regressor and Long-Short-Term Memory as the models used for training, separated into separate pipelines. 
-The models are fitted to the train data and further evaluated on test sets using validation metric functions from the sklearn library. Actual and predicted prices of the last 5 predictions are displayed for translating the models' performances from technical to non-technical audiences. 
+The models are fitted to the train data and further evaluated on test sets using validation metric functions from the sklearn library. The last 5 predicted prices and their corresponding actual prices are displayed for translating the models' performances from technical to non-technical audiences. 
 
 ### XGB Regressor 
 | Validation metrics   | Value    |  
@@ -72,11 +72,11 @@ The models are fitted to the train data and further evaluated on test sets using
 | R^2                  | 0....    |
 | MAE                  | 0....    |
 
-| Actual Prices  | Predicted Prices |  
-|----------------|------------------|
-| ...            | ...              |
-| ...            | ...              |
-| ...            | ...              |
+| Predicted Prices | Actual Prices |  
+|------------------|---------------|
+| ...              | ...           |
+| ...              | ...           |
+| ...              | ...           |
 
 ## Frontend Application on 🤗 Hugging Face Spaces:
 We have made a functional frontend application that visually demonstrates the project’s application in real-world scenarios. The Streamlit application is located in the following [Github Repository](https://github.com/tobiasmj97/bds_m7_second-semester-project_streamlit).
