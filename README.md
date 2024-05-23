@@ -17,7 +17,7 @@ This repository contains all notebooks and local data files for the final second
 This project aims to build a prediction system that forecasts the electricity prices in Denmark (area DK1) based on weather conditions, previous prices, and the Danish calendar.
 
 ## Structure:
-There are five notebooks in the folder "*notebooks*":
+There are five notebooks in the folder "*pipeline*":
 
 1. **Feature Backfill**: Historical data is loaded and we engineer and create feature groups in Hopswork. Exploratory Data Analysis is performed aimed at understanding the characteristics and underlying patterns within the data.
 2. **Feature Pipeline**: New data are parsed and inserted into the feature groups.
