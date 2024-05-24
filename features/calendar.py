@@ -8,6 +8,7 @@ def calendar_denmark(freq: str = 'D', start: str = (pd.Timestamp.now().year - 2)
     Fetches calendar for Denmark.
 
     Parameters:
+    - freq (str): Define the frequency of the calendar. Default 'D' (daily).
     - start (str): Define a start year. Default current year minus 2 years.
     - end (str): Define a end year. Default current year and 1 year ahead.
 
@@ -18,9 +19,6 @@ def calendar_denmark(freq: str = 'D', start: str = (pd.Timestamp.now().year - 2)
     # Define the start and end dates
     start_date = str(start) + ' 00:00:00'
     end_date = str(end) + ' 23:00:00'
-
-    # Frequency of the datetime range
-    freq = 'H'  # Example frequency, adjust as needed
 
     # Create the datetime range
     date_range = pd.date_range(start=start_date, end=end_date, freq=freq)
