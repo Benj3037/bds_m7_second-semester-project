@@ -1,5 +1,6 @@
 altair==4.2.2
 folium==0.16.0
+holidays
 hopsworks==3.7.0
 hsfs==3.7.2
 joblib==1.4.0
