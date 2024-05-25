@@ -2,7 +2,7 @@
 
 set -e
 
-cd notebooks
+cd pipeline
 
 # Run the feature pipeline
 jupyter nbconvert --to notebook --execute 2_feature_pipeline.ipynb
