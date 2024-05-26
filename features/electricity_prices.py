@@ -162,7 +162,7 @@ def electricity_prices_window(historical: bool = False, area: list = None, start
     else:
         electricity_window_df_filtered = electricity_window_df[electricity_window_df.date >= today]
 
-    # Only keep the columns 'timestamp', 'prev_1w_mean', 'prev_2w_mean', and 'prev_4w_mean'
+    # Only keep the columns 'timestamp', 'prev_1w_mean', 'prev_2w_mean', 'prev_4w_mean', 'prev_6w_mean', 'prev_8w_mean', and 'prev_12w_mean'
     electricity_window_df_filtered=electricity_window_df_filtered[['timestamp', 'datetime', 'prev_1w_mean', 'prev_2w_mean', 'prev_4w_mean', 'prev_6w_mean', 'prev_8w_mean', 'prev_12w_mean']]
 
     # Return the DataFrame with electricity prices data
