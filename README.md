@@ -24,12 +24,12 @@ There are six notebooks in the folder "*pipeline*":
 3. **Training Pipeline XGBRegressor**: Building feature view, training dataset split, training the model and evaluating, and saving it in the Model Registry.
 4. **Training Pipeline LSTM**: Building feature view, model architecture, and training dataset split, training the model, and saving it in the Model Registry.
 5. **Inference Pipeline XGBRegressor**: Loading new forecasted weather measures for final predictions. The trained model is retrieved from the model registry and used for inference and electricity price predictions on the new data.
-6. **Inference Pipeline LSTM**: Loading new forecasted weather measures for final predictions. The trained model is retrieved from the model registry and used for inference and electricity price predictions on the new data..
+6. **Inference Pipeline LSTM**: Loading new forecasted weather measures for final predictions. The trained model is retrieved from the model registry and used for inference and electricity price predictions on the new data.
 
 The structure of the notebooks is largely inspired by [Hopsworks tutorials](https://github.com/logicalclocks/hopsworks-tutorials).
 Inspiration for code snippets has been taken from the following advanced tutorials [air_quality](https://github.com/logicalclocks/hopsworks-tutorials/tree/master/advanced_tutorials/air_quality), [electricity](https://github.com/logicalclocks/hopsworks-tutorials/tree/master/advanced_tutorials/electricity), and [timeseries](https://github.com/logicalclocks/hopsworks-tutorials/tree/master/advanced_tutorials/timeseries).
 
-[Hopsworks](https://www.hopsworks.ai) is used as the platform to store features in the **Hopworks Feature Store** and save the trained models in **Hopworks Model Registry**. Daily instance generation is done through GitHub Actions. Feature pipeline and both inference pipelines are scheduled to run at 01:55 UTC everyday and then scheduled to sync to Huggingface Spaces at 02:01 UTC everyday.
+[Hopsworks](https://www.hopsworks.ai) is used as the platform to store features in the **Hopworks Feature Store** and save the trained models in **Hopworks Model Registry**. Daily instance generation is done through GitHub Actions where the Feature pipeline and both inference pipelines are scheduled to run at 01:55 UTC everyday.
 
 ## Data Pipeline:
 The overall architecture of the Electricity Pipeline is illustrated below. Inspiration is taken from [Lecture 1 - serverless ml course feature pipelines](https://drive.google.com/file/d/1L8DHGC5xo0NlNe8xfh4xf4NZV1CEGBA6/view). 
