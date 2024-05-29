@@ -19,17 +19,17 @@ This project aims to build a prediction system that forecasts the electricity pr
 ## Structure:
 There are six notebooks in the folder "*pipeline*":
 
-1. **Feature Backfill**: Historical data is loaded and we engineer and create feature groups in Hopswork. Exploratory Data Analysis is performed aimed at understanding the characteristics and underlying patterns within the data. Moving Window is applied as a feature engineering technique trying to smooth out short-term fluctuations and highlight longer-term trends or cycles in the time-series data.
+1. **Feature Backfill**: Historical data is loaded and we engineer and create feature groups in Hopswork. Moving Window is applied as a feature engineering technique trying to smooth out short-term fluctuations and highlight longer-term trends or cycles in the time-series data. Exploratory Data Analysis is performed aimed at understanding the characteristics and underlying patterns within the data.
 2. **Feature Pipeline**: New data are parsed and inserted into the feature groups.
 3. **Training Pipeline XGBRegressor**: Building feature view, training dataset split, training the model and evaluating, and saving it in the Model Registry.
 4. **Training Pipeline LSTM**: Building feature view, model architecture, and training dataset split, training the model, and saving it in the Model Registry.
 5. **Inference Pipeline XGBRegressor**: Loading new forecasted weather measures for final predictions. The trained model is retrieved from the model registry and used for inference and electricity price predictions on the new data.
-6. **Inference Pipeline LSTM**: The trained model is retrieved from the model registry and used for inference and electricity price predictions on weather forecast measures.
+6. **Inference Pipeline LSTM**: Loading new forecasted weather measures for final predictions. The trained model is retrieved from the model registry and used for inference and electricity price predictions on the new data.
 
 The structure of the notebooks is largely inspired by [Hopsworks tutorials](https://github.com/logicalclocks/hopsworks-tutorials).
 Inspiration for code snippets has been taken from the following advanced tutorials [air_quality](https://github.com/logicalclocks/hopsworks-tutorials/tree/master/advanced_tutorials/air_quality), [electricity](https://github.com/logicalclocks/hopsworks-tutorials/tree/master/advanced_tutorials/electricity), and [timeseries](https://github.com/logicalclocks/hopsworks-tutorials/tree/master/advanced_tutorials/timeseries).
 
-[Hopsworks](https://www.hopsworks.ai) is used as the platform to store features in the **Hopworks Feature Store** and save the trained models in **Hopworks Model Registry**. Daily instance generation is done through GitHub Actions. Feature pipeline and inference are scheduled to run at 01:55 UTC everyday and then scheduled to sync to Huggingface Spaces at 02:01 UTC everyday.
+[Hopsworks](https://www.hopsworks.ai) is used as the platform to store features in the **Hopworks Feature Store** and save the trained models in **Hopworks Model Registry**. Daily instance generation is done through GitHub Actions where the Feature pipeline and both inference pipelines are scheduled to run at 01:55 UTC everyday.
 
 ## Data Pipeline:
 The overall architecture of the Electricity Pipeline is illustrated below. Inspiration is taken from [Lecture 1 - serverless ml course feature pipelines](https://drive.google.com/file/d/1L8DHGC5xo0NlNe8xfh4xf4NZV1CEGBA6/view). 
@@ -53,32 +53,36 @@ The models are fitted to the train data and further evaluated on test sets using
 ### XGB Regressor 
 | Validation metrics   | Value    |  
 |----------------------|----------|
-| MSE                  | 0.070    |
-| MAE                  | 0.211    |
-| RMSE                 | 0.265    |
+| MSE                  | 0.046    |
+| MAE                  | 0.161    |
+| RMSE                 | 0.214    |
 
-| Predicted Prices | Actual Prices |  
-|------------------|---------------|
-| 1: 0.4164        | 1: 0.4783     |
-| 2: 0.3227        | 2: 0.3917     |
-| 3: 0.4446        | 3: 0.3381     |
-| 4: 0.5635        | 4: 0.4252     |
-| 5: 0.6519        | 5: 0.5328     |
+| Predicted Prices   | Actual Prices  |  
+|--------------------|----------------|
+| 1: 0.360993        | 1: 0.66118     |
+| 2: 0.361774        | 2: 0.62298     |
+| 3: 0.368297        | 3: 0.53649     |
+| 4: 0.324221        | 4: 0.09887     |
+| 5: 0.301910        | 5: 0.00015     |
 
 ### LSTM
 | Validation metrics   | Value    |  
 |----------------------|----------|
-| MSE                  | 0....    |
-| R^2                  | 0....    |
-| MAE                  | 0....    |
+| Loss                 | 0.005    |
+| MSE                  | 0.455    |
+| MAE                  | 0.531    |
+| RMSE                 | 0.674    |
 
-| Predicted Prices | Actual Prices |  
-|------------------|---------------|
-| ...              | ...           |
-| ...              | ...           |
-| ...              | ...           |
+| Predicted Prices   | Actual Prices  |  
+|--------------------|----------------|
+| 1: 0.789154        | 1: 0.88047     |
+| 2: 0.717946        | 2: 0.73004     |
+| 3: 0.636073        | 3: 0.56447     |
+| 4: 0.538946        | 4: 0.55880     |
+| 5: 0.440306        | 5: 0.47829     |
 
 ## Frontend Application on 🤗 Hugging Face Spaces:
 We have made a functional frontend application that visually demonstrates the project’s application in real-world scenarios. The Streamlit application is located in the following [Github Repository](https://github.com/tobiasmj97/bds_m7_second-semester-project_streamlit).
 
-Streamlit app is hosted on [Huggingface](https://huggingface.co/spaces/Camillahannesbo/Electricity_price). **link skal ændres**
+Streamlit app is hosted on [Huggingface](https://huggingface.co/spaces/tobiasmj97/sp_forecast_electricity_prices).
+
