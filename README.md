@@ -48,7 +48,7 @@ See corresponding functions in the folder [features](https://github.com/tobiasmj
 
 ## Model Performance Comparison:
 We initialize XGBoost Regressor and Long-Short-Term Memory as the models used for training, separated into separate pipelines. 
-The models are fitted to the train data and further evaluated on test sets using validation metric functions from the sklearn library. The last 5 predicted prices and their corresponding actual prices are displayed for translating the models' performances from technical to non-technical audiences. 
+The models are fitted to the train data and further evaluated on test sets using validation metric functions from the sklearn library. A snapshot of the last 5 predicted prices and their corresponding actual prices are displayed for translating the models' performances from technical to non-technical audiences. 
 
 ### XGB Regressor 
 | Validation metrics   | Value    |  
